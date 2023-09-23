@@ -1,2 +1,2 @@
 # resumer-maker-ai
-Add your experience &amp; skills once &amp; then it will auto create resume for inputed job description.
+Add your experience and skills once and then it will automatically create your customized resume for inputed job description.
