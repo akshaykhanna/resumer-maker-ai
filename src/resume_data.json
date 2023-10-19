@@ -1,5 +1,39 @@
 {
     "name": "John Doe",
     "email": "john.doe@example.com",
-    "experience": "Software Engineer at ABC Inc."
+    "phone": "+1 (123) 456-7890",
+    "image_url": "https://example.com/profile-image.jpg",
+    "work_experience": [
+        {
+            "title": "Software Engineer",
+            "company": "ABC Inc.",
+            "duration": "January 2018 - Present",
+            "description": "Lead developer on various projects, responsible for..."
+        },
+        {
+            "title": "Junior Developer",
+            "company": "XYZ Corp.",
+            "duration": "May 2016 - December 2017",
+            "description": "Contributed to front-end and back-end development tasks..."
+        }
+    ],
+    "skills": [
+        "Python",
+        "JavaScript",
+        "HTML/CSS",
+        "React",
+        "SQL"
+    ],
+    "awards": [
+        {
+            "title": "Employee of the Year",
+            "year": "2020",
+            "description": "Recognized for outstanding contributions and dedication."
+        },
+        {
+            "title": "Innovation Award",
+            "year": "2019",
+            "description": "Received for developing a groundbreaking application."
+        }
+    ]
 }
