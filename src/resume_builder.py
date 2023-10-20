@@ -1,7 +1,5 @@
 import jinja2
 import json
-
-# from weasyprint import HTML
 import pdfkit
 from constants import (
     INPUT_FOLDER_PATH,
@@ -59,9 +57,6 @@ class ResumeBuilder:
         # Render the HTML template with the data
         self._create_resume_html_file_with_data()
         self._generate_pdf_from_html()
-
-        # Create a PDF from the rendered HTML
-        # HTML(string=html_content).write_pdf(f"{OUTPUT_FOLDER_PATH}{RESUME_PDF_FILE}")
 
 
 if __name__ == "__main__":
