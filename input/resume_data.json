@@ -2,7 +2,7 @@
     "name": "John Doe",
     "email": "john.doe@example.com",
     "phone": "+1 (123) 456-7890",
-    "image_url": "https://example.com/profile-image.jpg",
+    "image_url": "https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI",
     "work_experience": [
         {
             "title": "Software Engineer",
