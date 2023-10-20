@@ -15,4 +15,4 @@ with open("./src/resume_data.json", "r") as data_file:
 html_content = template.render(data)
 
 # Create a PDF from the rendered HTML
-HTML(string=html_content).write_pdf("resume.pdf")
+HTML(string=html_content).write_pdf("./output/resume.pdf")
