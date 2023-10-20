@@ -2,81 +2,94 @@
 <html>
 <head>
     <title>Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
         }
 
-        h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin: 5px 0;
-        }
-
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section-heading {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .sub-section {
-            margin-left: 20px;
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
         }
 
         .image {
             width: 120px;
             height: 120px;
-            margin-right: 20px;
-            float: left;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .contact-info {
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-heading {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .sub-section {
+            margin-left: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="{{ image_url }}" alt="Profile Image" class="image">
-        <h1>{{ name }}</h1>
-        <p>{{ email }}</p>
-        <p>{{ phone }}</p>
-        <!-- You can add more contact information as needed -->
-    </div>
-
-    <div class="section">
-        <div class="section-heading">Work Experience</div>
-        {% for experience in work_experience %}
-            <div class="sub-section">
-                <p><strong>{{ experience.title }} - {{ experience.company }}</strong></p>
-                <p>{{ experience.duration }}</p>
-                <p>{{ experience.description }}</p>
+    <div class="container">
+        <div class="header">
+            <img src="{{ image_url }}" alt="Profile Image" class="image">
+            <h1>{{ name }}</h1>
+            <div class="contact-info">
+                <p>{{ email }}</p>
+                <p>{{ phone }}</p>
             </div>
-        {% endfor %}
-    </div>
+        </div>
 
-    <div class="section">
-        <div class="section-heading">Skills</div>
-        <ul>
-            {% for skill in skills %}
-                <li>{{ skill }}</li>
+        <div class="section">
+            <div class="section-heading">Work Experience</div>
+            {% for experience in work_experience %}
+                <div class="sub-section">
+                    <p><strong>{{ experience.title }} - {{ experience.company }}</strong></p>
+                    <p>{{ experience.duration }}</p>
+                    <p>{{ experience.description }}</p>
+                </div>
             {% endfor %}
-        </ul>
-    </div>
+        </div>
 
-    <div class="section">
-        <div class="section-heading">Awards and Recognitions</div>
-        {% for award in awards %}
-            <div class="sub-section">
-                <p><strong>{{ award.title }}</strong></p>
-                <p>{{ award.year }}</p>
-                <p>{{ award.description }}</p>
-            </div>
-        {% endfor %}
+        <div class="section" style="background-color: #f8f9fa;">
+            <div class="section-heading">Skills</div>
+            <ul>
+                {% for skill in skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section" style="background-color: #d4edda;">
+            <div class="section-heading">Awards and Recognitions</div>
+            {% for award in awards %}
+                <div class="sub-section">
+                    <p><strong>{{ award.title }}</strong></p>
+                    <p>{{ award.year }}</p>
+                    <p>{{ award.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
