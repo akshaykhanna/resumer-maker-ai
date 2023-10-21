@@ -55,8 +55,8 @@ class ResumeBuilder:
 if __name__ == "__main__":
     resume_builder = ResumeBuilder()
     builder_obj = {
-        "should_tweak_resume_data_based_on_jd": True,
-        "should_summarize_jd": True,
+        "should_tweak_resume_data_based_on_jd": False,
+        "should_summarize_jd": False,
         "jd": {
             "title": "Senior Software Engineer",
             "company": "Microsoft",

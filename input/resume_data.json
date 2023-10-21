@@ -1,39 +1,77 @@
 {
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "phone": "+1 (123) 456-7890",
+    "name": "Akshay Khanna",
+    "email": "akshay9911102163@gmail.com",
+    "phone": "+91-9591850974",
     "image_url": "https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI",
     "work_experience": [
         {
-            "title": "Software Engineer",
-            "company": "ABC Inc.",
-            "duration": "January 2018 - Present",
-            "description": "Lead developer on various projects, responsible for..."
+            "title": "Sr. Software Engineer",
+            "company": "Servicenow",
+            "duration": "September 2021 - Present",
+            "description": "* Developing and architect multiple product apps, microservices, REST API & UI components as part of the WSD (workplace management suite) product team using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI. <br/> * Designed the architecture & led the complete UI heavy development of a complex Scenario Planning (Office space planning & visualization) app, & for that, also built a complex data visualization and planning UI component called Stack Plan from scratch and recursive hierarchical tree visualization."
         },
         {
-            "title": "Junior Developer",
-            "company": "XYZ Corp.",
-            "duration": "May 2016 - December 2017",
-            "description": "Contributed to front-end and back-end development tasks..."
+            "title": "Senior Consultant",
+            "company": "Thoughtworks",
+            "duration": "September 2018 - September 2021",
+            "description": "* Worked on the development & performance improvement of Atlassian's core UI design components in coordination with their Design System Team. Refactor & add features, contribute to there open source libraries, & wrote code mods (AST JSCodeShift) for easy shipping of these components. <br/> * Build a complex distributed system for UK's leading Outdoor advertisement company. Have built multiple microservices & REST API using Golang, Java, Python & MongoDB & followed DDD to build them. Written multiple CRON jobs, handled concurrency (via routines) & managed the event-driven architecture using SNS & SQS. Built UI using React Redux and used linear programming (GLPK) to solve their inventory optimization problem. Written unit, integration & contract test for each microservice and followed TDD & pair programming."
+        },
+        {
+            "title": "Product Developer",
+            "company": "Tieto",
+            "duration": "September 2017 - September 2018",
+            "description": "* Part of Tieto's (NORDICS company) Healthcare Product development teams, built 2 apps one was patient list & task management app from scratch for it. <br/> * Worked as full stack developer in these teams using Angular 5+ in front-end and Java MVC (+ SQL) REST microservices on the back- end. Have to develop user stories, write a unit test (jasmine + karma + jUnit), find bugs, purpose & implement suggestion & enhancements to the product, give demo after sprint’s and attend/conduct grooming, swarming, and retrospective meetings with product OPO’s"
+        },
+        {
+            "title": "Software Engineer",
+            "company": "Infosys",
+            "duration": "September 2015 - September 2017",
+            "description": "* Develop user stories and change requests as part of an agile Java backend development team for a Telecom Client Product. <br/> * Wrote single-handed multiple utilities & automation scripts to automate the above project infra work & improve application stability. Some of them were Bot for Auto Incident Resolver on BMC IATM ( Java & Sikuli lib), Bot for clearing stalls (stuck processes) using C#, WPF & Selenium, Auto Start/Stop Production Jobs & Server (C#, Background Worker) and Server Log Management utility (C#, Ionic Zip lib)."
         }
     ],
     "skills": [
-        "Python",
-        "JavaScript",
-        "HTML/CSS",
-        "React",
-        "SQL"
+        "Languages: JavaScript, Python, Java, Golang, & C#",
+        "Database: MySQL, MS SQL, & MongoDb",
+        "Frameworks/Tools/Design Patterns: React JS, Redux, Angular 2+, Pact for contract testing, Servicenow, CSS in JS , Backend for the frontend, DDD, Open AI, LLM ,Gen AI",
+        "Cloud/Devops: AWS, Azure, SNS, SQS, Rabbit MQ, Docker, CI/CD pipelines & Jenkins",
+        "Practices: TDD, Pair programming, XP, TBD, OOPs, Clean code strategies, & cross-functional teams.",
+        "Data Structures, Algorithms, Distributed systems, Micro services , REST API, Design System & libraries, System Designing & Architecture Designing"
     ],
     "awards": [
         {
-            "title": "Employee of the Year",
-            "year": "2020",
-            "description": "Recognized for outstanding contributions and dedication."
+            "title": "Bronze Badge (HackeRank) & Qualified GCM",
+            "year": "2015",
+            "description": "Won Bronze badge in algorithms domain at HackerRank. <br/> Qualified Google Code Jam (GCM) round one"
         },
         {
-            "title": "Innovation Award",
+            "title": "Insta Award Infosys",
+            "year": "2016",
+            "description": "Excellent work done in automation in client project."
+        },
+        {
+            "title": "MVP in 3 sprints, Tieto",
+            "year": "2017",
+            "description": "Awarded by team for contribution & guidance in dev"
+        },
+        {
+            "title": "Floe Ninja ThoughtWorks",
             "year": "2019",
-            "description": "Received for developing a groundbreaking application."
+            "description": "Developing client inventory dashboard in hackathon."
+        },
+        {
+            "title": "Kudos from Atlassian",
+            "year": "2020",
+            "description": "For contribution in their performance improvement initiative."
+        },
+        {
+            "title": "Advent of Code (AOC) with all 50 stars",
+            "year": "2020",
+            "description": "Completed AOC with all 50 stars and ranked 2 on office leaderboard"
+        },
+        {
+            "title": "Servicenow Lama Award",
+            "year": "2022",
+            "description": "For designing, architect & leading UI development of most critical project of Q3"
         }
     ]
 }
