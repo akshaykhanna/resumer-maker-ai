@@ -14,3 +14,4 @@ MODELS = {
         "name": "resume-writer",
     },
 }
+
