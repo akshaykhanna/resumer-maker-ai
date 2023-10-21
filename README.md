@@ -11,3 +11,19 @@ git config user.name "Your Repository-Specific Username"
 git config user.email "your.repository.email@example.com"
 
 ```
+
+## Ollama LLM
+
+https://github.com/jmorganca/ollama#macos
+### Run chat & server
+`ollama run llama2`
+
+### Run server 
+`ollama serve`
+
+
+## Requirements
+
+> Update requiremnts: `pip freeze > requirements.txt`
+
+> Install requiremnts `pip install -r requirements.txt`
