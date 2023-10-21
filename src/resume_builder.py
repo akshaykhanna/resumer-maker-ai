@@ -12,7 +12,7 @@ from constants import (
 )
 
 from job_description import get_summarize_jd
-from resume_data import get_resume_data, update_resume_data_based_on_jd
+from resume_data import get_resume_data, get_resume_data_based_on_jd
 
 
 class ResumeBuilder:
@@ -46,7 +46,7 @@ class ResumeBuilder:
             jd = builder_obj["jd"]
             if(builder_obj["should_summarize_jd"]):
                 jd = get_summarize_jd(jd)
-            update_resume_data_based_on_jd(self.resume_data, jd)
+            self.resume_data = get_resume_data_based_on_jd(self.resume_data, jd)
             
         self._create_resume_html_file_with_data()
         self._generate_pdf_from_html()
