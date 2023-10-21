@@ -1,8 +1,10 @@
 import json
+import os
 from llama_llm import LLM
 from constants import (
     OUTPUT_FOLDER_PATH,
     MODELS,
+    SUMMARIZED_DATA_JSON
 )
 
 def _get_summarize_prompt(section, title, company, text, no_of_lines=2):
@@ -10,13 +12,21 @@ def _get_summarize_prompt(section, title, company, text, no_of_lines=2):
          Summarize below {section} text for {title} at {company} in max {no_of_lines} lines. Return only summarize text as response & don't add any pre text like Sure! ...
          `{text}`
         '''
-def summarize_jd(jd):
+def get_summarize_jd(jd):
+        summarize_fn_with_path = f"{OUTPUT_FOLDER_PATH}{SUMMARIZED_DATA_JSON}"
+        # check if summarize jd file already exists
+        if os.path.exists(summarize_fn_with_path):
+            with open(summarize_fn_with_path, "r") as jd_file:
+                jd = json.load(jd_file)
+                return jd
+      
         llm = LLM(MODELS["llama"]["name"])
         jd["responsibilities"] = llm.generateResponse(_get_summarize_prompt("responsibilities", jd["title"], jd["company"], jd["responsibilities"]))
         jd["skills"] = llm.generateResponse(_get_summarize_prompt("skills", jd["title"], jd["company"], jd["skills"]))
         # write summarize jd object to JSON file
-        with open(f"{OUTPUT_FOLDER_PATH}summarize_jd.json", "w") as jd_file:
+        with open(summarize_fn_with_path, "w") as jd_file:
             json.dump(jd, jd_file)
+            return jd
 
 if __name__ == "__main__":
     jd = {
@@ -42,4 +52,4 @@ if __name__ == "__main__":
             Degree in CS or equivalent experience
             """,
     }
-    summarize_jd(jd)
+    get_summarize_jd(jd)
