@@ -1,62 +1,24 @@
-import jinja2
-
-import pdfkit
+import json
+from llama_llm import LLM
 from constants import (
-    INPUT_FOLDER_PATH,
     OUTPUT_FOLDER_PATH,
-    RESUME_TEMPLATE_FILE,
-    RESUME_DATA_FILE,
-    RESUME_HTML_FILE,
-    RESUME_PDF_FILE,
-    PDF_OPTIONS
+    MODELS,
 )
 
-from job_description import summarize_jd
-
-
-class ResumeBuilder:
-    def __init__(
-        self, resume_template=RESUME_TEMPLATE_FILE, resume_data_file=RESUME_DATA_FILE
-    ):
-        self._load_template(resume_template)
-        self._get_resume_data(resume_data_file)
-
-    def _get_resume_data(self, resume_data_file):
-        with open(f"{INPUT_FOLDER_PATH}{resume_data_file}", "r") as data_file:
-            self.resume_data = json.load(data_file)
-
-    def _create_resume_html_file_with_data(self):
-        html_content = self.template.render(self.resume_data)
-        with open(f"{OUTPUT_FOLDER_PATH}{RESUME_HTML_FILE}", "w") as ofile:
-            ofile.write(html_content)
-
-    def _load_template(self, resume_template):
-        template_loader = jinja2.FileSystemLoader(searchpath="./")
-        template_env = jinja2.Environment(loader=template_loader)
-        self.template = template_env.get_template(
-            f"{INPUT_FOLDER_PATH}{resume_template}"
-        )
-
-    def _generate_pdf_from_html(self):
-        pdfkit.from_file(
-            input=f"{OUTPUT_FOLDER_PATH}{RESUME_HTML_FILE}",
-            output_path=f"{OUTPUT_FOLDER_PATH}{RESUME_PDF_FILE}",
-            options=PDF_OPTIONS,
-        )
-    
-        
-    def update_resume_data_based_on_jd(self, jd):
-        summarize_jd(jd)
-        
-
-    def build(self):
-        # Render the HTML template with the data
-        self._create_resume_html_file_with_data()
-        self._generate_pdf_from_html()
-
+def _get_summarize_prompt(section, title, company, text, no_of_lines=2):
+        return f'''
+         Summarize below {section} text for {title} at {company} in max {no_of_lines} lines. Return only summarize text as response & don't add any pre text like Sure! ...
+         `{text}`
+        '''
+def summarize_jd(jd):
+        llm = LLM(MODELS["llama"]["name"])
+        jd["responsibilities"] = llm.generateResponse(_get_summarize_prompt("responsibilities", jd["title"], jd["company"], jd["responsibilities"]))
+        jd["skills"] = llm.generateResponse(_get_summarize_prompt("skills", jd["title"], jd["company"], jd["skills"]))
+        # write summarize jd object to JSON file
+        with open(f"{OUTPUT_FOLDER_PATH}summarize_jd.json", "w") as jd_file:
+            json.dump(jd, jd_file)
 
 if __name__ == "__main__":
-    resume_builder = ResumeBuilder()
     jd = {
         "title" : "Senior Software Engineer",
         "company" : "Microsoft",
@@ -80,5 +42,4 @@ if __name__ == "__main__":
             Degree in CS or equivalent experience
             """,
     }
-    # resume_builder.summarize_jd(jd)
-    resume_builder.build()
+    summarize_jd(jd)

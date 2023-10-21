@@ -14,4 +14,14 @@ MODELS = {
         "name": "resume-writer",
     },
 }
-
+PDF_OPTIONS = {
+    "dpi": 500,
+    "page-size": "A4",
+    "margin-top": "0.25in",
+    "margin-right": "0.25in",
+    "margin-bottom": "0.25in",
+    "margin-left": "0.25in",
+    "encoding": "UTF-8",
+    "custom-header": [("Accept-Encoding", "gzip")],
+    "no-outline": None,
+}
