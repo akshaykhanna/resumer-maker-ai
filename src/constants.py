@@ -1,3 +1,4 @@
+CANDIDATES_FOLDER_PATH = "./candidates/"
 INPUT_FOLDER_PATH = "./input/"
 OUTPUT_FOLDER_PATH = "./output/"
 RESUME_TEMPLATE_FILE = "resume_template.html"

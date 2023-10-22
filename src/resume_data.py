@@ -1,7 +1,7 @@
 import json
 import os
 from constants import (
-    INPUT_FOLDER_PATH,
+    CANDIDATES_FOLDER_PATH,
     OUTPUT_FOLDER_PATH,
     RESUME_DATA_JSON,
     MODELS
@@ -10,7 +10,7 @@ from constants import (
 from llama_llm import LLM
 
 def get_resume_data(resume_data_file):
-        with open(f"{INPUT_FOLDER_PATH}{resume_data_file}", "r") as data_file:
+        with open(f"{CANDIDATES_FOLDER_PATH}{resume_data_file}", "r") as data_file:
             resume_data = json.load(data_file)
             return resume_data
 
