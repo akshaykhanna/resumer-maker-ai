@@ -60,7 +60,7 @@ def _update_skills(resume_data, jd, llm):
     resume_data["skills"] = [skill.strip() for skill in my_skills]
 
 
-def get_resume_data_updated_based_on_jd(resume_data_file):
+def get_resume_data_updated_based_on_jd(resume_data_file, llm):
     resume_data = get_resume_data(resume_data_file)
     jd = get_summarize_jd_or_jd()
     if not jd or not resume_data:
@@ -72,14 +72,14 @@ def get_resume_data_updated_based_on_jd(resume_data_file):
             resume_data = json.load(resume_data_file)
             return resume_data
 
-    llm = LLM(MODELS["resume"]["name"])
+    # llm = LLM(MODELS["resume"]["name"])
     _update_work_experiences(resume_data, jd, llm)
     _update_skills(resume_data, jd, llm)
     # write updated resume data object to JSON file
     with open(resume_data_json_fn, "w") as resume_data_file:
         json.dump(resume_data, resume_data_file)
         return resume_data
-
+    
 
 if __name__ == "__main__":
     get_resume_data_updated_based_on_jd(RESUME_DATA_JSON)

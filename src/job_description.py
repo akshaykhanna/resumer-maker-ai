@@ -44,7 +44,7 @@ def write_jd_to_file(jd):
         json.dump(jd, jd_file)
         return jd
 
-def summarize_jd(jd):
+def summarize_jd(jd, llm):
         summarize_fn_with_path = f"{OUTPUT_FOLDER_PATH}{SUMMARIZED_JD_JSON}"
         # check if summarize jd file already exists
         if os.path.exists(summarize_fn_with_path):
@@ -52,7 +52,7 @@ def summarize_jd(jd):
                 jd = json.load(jd_file)
                 return jd
       
-        llm = LLM(MODELS["resume"]["name"])
+        # llm = LLM(MODELS["resume"]["name"])
         jd["responsibilities"] = _prune_response(llm.generateResponse(_get_summarize_prompt("responsibilities", jd["title"], jd["company"], jd["responsibilities"])))
         jd["skills"] = _prune_response(llm.generateResponse(_get_summarize_prompt("skills", jd["title"], jd["company"], jd["skills"])))
         # write summarize jd object to JSON file

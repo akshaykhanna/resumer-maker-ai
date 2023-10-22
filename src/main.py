@@ -1,4 +1,4 @@
-from resume_builder import ResumeBuilder
+from builder import ResumeBuilder
 
 resume_builder = ResumeBuilder()
 builder_obj = {
