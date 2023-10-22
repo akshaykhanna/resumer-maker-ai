@@ -9,7 +9,7 @@ from constants import (
     RESUME_HTML_FILE,
     RESUME_PDF_FILE,
     PDF_OPTIONS,
-    MODELS
+    MODELS,
 )
 from llama_llm import LLM
 from job_description import summarize_jd, write_jd_to_file
@@ -22,7 +22,6 @@ class ResumeBuilder:
     ):
         self._load_template(resume_template)
         self.resume_data_file = resume_data_file
-        self.llm = LLM(MODELS["resume"]["name"])
 
     def _create_resume_html_file_with_data(self):
         html_content = self.template.render(self.resume_data)
@@ -45,14 +44,17 @@ class ResumeBuilder:
 
     def build(self, builder_obj):
         if builder_obj["should_tweak_resume_data_based_on_jd"] and builder_obj["jd"]:
+            llm = LLM(MODELS["resume"]["name"])
             jd = builder_obj["jd"]
             write_jd_to_file(jd)
-            if(builder_obj["should_summarize_jd"]):
-                summarize_jd(jd, self.llm)
-            self.resume_data = get_resume_data_updated_based_on_jd(self.resume_data_file, self.llm)
+            if builder_obj["should_summarize_jd"]:
+                summarize_jd(jd, llm)
+            self.resume_data = get_resume_data_updated_based_on_jd(
+                self.resume_data_file, llm
+            )
         else:
             self.resume_data = get_resume_data(self.resume_data_file)
-            
+
         self._create_resume_html_file_with_data()
         self._generate_pdf_from_html()
 
