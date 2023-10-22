@@ -1,1 +1,116 @@
-{"name": "Akshay Khanna", "email": "akshay9911102163@gmail.com", "phone": "+91-9591850974", "image_url": "https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI", "work_experience": [{"title": "Sr. Software Engineer", "company": "Servicenow", "duration": "September 2021 - Present", "description": " Sure! Here's how you can tweak the job work experience section of your resume to highlight your relevant skills and accomplishments based on the responsibilities you provided:\n\nWork Experience:\n\nSenior Software Engineer, Microsoft\n------------------------------\n\n* Defined and executed a vision for next-generation autonomous cloud infrastructure, enabling M365 Sovereign and Regulated cloud offerings.\n* Joined the new Special Cloud team as a founding member and innovated in the space of internet-scale distributed cloud systems.\n\nWork Experience:\n\nSoftware Engineer, WSD (Workplace Management Suite) Product Team\n--------------------------------------------------------\n\n* Developed and architected multiple product apps, microservices, REST API & UI components using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI.\n* Designed the architecture and led the complete development of a complex Scenario Planning (Office space planning & visualization) app, including a custom-built data visualization and planning UI component called Stack Plan.\n* Created a recursive hierarchical tree visualization for complex data representation and manipulation.\n\nI hope this helps you showcase your relevant skills and accomplishments in your resume!"}, {"title": "Senior Consultant", "company": "Thoughtworks", "duration": "September 2018 - September 2021", "description": " Sure! Here's how I would tweak the job work experience section of a resume for a Senior Software Engineer at Microsoft based on the provided job responsibilities:\n\nWork Experience:\n\nSenior Software Engineer, Microsoft\nDates of Employment: [Insert dates]\n\n* Defined and executed a vision for the next generation of autonomous cloud infrastructure, enabling M365 Sovereign and Regulated cloud offerings. Led a team in the development of innovative solutions and contributed to the growth of the company through technical leadership.\n\nPrevious Experience:\n\nSoftware Engineer, Atlassian\nDates of Employment: [Insert dates]\n\n* Collaborated with the Design System Team to refactor and add features to Atlassian's core UI design components. Contributed to open-source libraries and wrote code mods (AST JSCodeShift) for easy shipping of these components.\n* Built a complex distributed system for a leading UK Outdoor advertisement company, using Golang, Java, Python, and MongoDB. Implemented multiple microservices and REST APIs, followed DDD to build them, and managed the event-driven architecture using SNS & SQS. Created a UI using React Redux and solved inventory optimization problems using linear programming (GLPK).\n* Wrote unit, integration, and contract tests for each microservice and followed TDD & pair programming.\n\nSkills:\n\n* Technical leadership\n* Cloud infrastructure development\n* Microservices architecture\n* REST API design\n* Golang, Java, Python programming\n* MongoDB database management\n* Event-driven architecture\n* SNS & SQS messaging systems\n* React Redux front-end development\n* Linear programming (GLPK) optimization\n* Test-driven development (TDD) and pair programming\n\nEducation:\n\nBachelor's/Master's Degree in Computer Science or related field, [Insert name of institution], [Insert dates of study]"}, {"title": "Product Developer", "company": "Tieto", "duration": "September 2017 - September 2018", "description": " Sure! Here's how you can tweak your job work experience section to highlight the relevant skills and responsibilities for a Senior Software Engineer at Microsoft:\n\nJob Work Experience:\nSenior Software Engineer, Microsoft\nDates of Employment: [insert dates]\n\nResponsibilities:\n\n* Defined and executed a vision and roadmap for the next generation of autonomous cloud infrastructure, enabling M365 Sovereign and Regulated cloud offerings.\n* Served as a founding member of the new Special Cloud team, responsible for innovating in the space of internet-scale distributed cloud systems.\n* Developed and maintained patient list & task management app from scratch using Angular 5+ front-end and Java MVC (+ SQL) REST microservices on the back-end.\n* Collaborated with cross-functional teams to develop user stories, write unit tests (jasmine + karma + jUnit), identify bugs, and implement suggestions and enhancements to the product.\n* Conducted demos after sprints and attended/led grooming, swarming, and retrospective meetings with product OPO's.\n\nSkills:\n\n* Strong experience in software development using Angular 5+ and Java MVC (+ SQL) microservices.\n* Proficient in unit testing frameworks (jasmine + karma + jUnit).\n* Excellent problem-solving skills and ability to work collaboratively with cross-functional teams.\n* Experience with Agile methodologies and ability to work in fast-paced environments."}, {"title": "Software Engineer", "company": "Infosys", "duration": "September 2015 - September 2017", "description": " Sure! Here's an updated version of your work experience section for a Senior Software Engineer role at Microsoft, based on the responsibilities you provided:\n\nWork Experience:\nSenior Software Engineer, Microsoft\nEmployment Dates: [Insert dates]\n\n* Defined and executed a vision and roadmap for next-generation autonomous cloud infrastructure, enabling M365 Sovereign and Regulated cloud offerings.\n\t+ Led cross-functional teams to design and develop innovative internet-scale distributed cloud systems.\n\t+ Collaborated with stakeholders to identify and prioritize project requirements, ensuring alignment with business objectives.\n\t+ Conducted technical reviews and provided feedback on team members' designs and code quality.\n* Joined the new Special Cloud team as a founding member and contributed to the development of cutting-edge cloud infrastructure solutions.\n\t+ Developed user stories and change requests for agile Java backend development, focusing on improving application stability and scalability.\n\t+ Created multiple automation scripts using various technologies (Java, Sikuli lib, C#, WPF, Selenium) to streamline project infrastructure work and enhance productivity.\n\t+ Implemented utilities for auto incident resolver on BMC IATM, server log management, and job scheduling to increase efficiency and reduce manual intervention.\n\nI hope this updated version helps you showcase your experience and skills in a more concise and effective manner!"}], "skills": ["Based on the job skills provided for a Senior Software Engineer at Microsoft", "here are your updated skills:\n\nLanguages: JavaScript", "Python", "Java", "Golang", "C#\nDatabase: MySQL", "MS SQL", "MongoDb\nFrameworks/Tools/Design Patterns: React JS", "Redux", "Angular 2+", "Pact for contract testing", "Servicenow", "CSS in JS", "Backend for the frontend", "DDD", "Open AI", "LLM", "Gen AI\nCloud/Devops: AWS", "Azure", "SNS", "SQS", "Rabbit MQ", "Docker", "CI/CD pipelines & Jenkins\nPractices: TDD", "Pair programming", "XP", "TBD", "OOPs", "Clean code strategies", "cross-functional teams."], "awards": [{"title": "Bronze Badge (HackeRank) & Qualified GCM", "year": "2015", "description": "Won Bronze badge in algorithms domain at HackerRank. <br/> Qualified Google Code Jam (GCM) round one"}, {"title": "Insta Award Infosys", "year": "2016", "description": "Excellent work done in automation in client project."}, {"title": "MVP in 3 sprints, Tieto", "year": "2017", "description": "Awarded by team for contribution & guidance in dev"}, {"title": "Floe Ninja ThoughtWorks", "year": "2019", "description": "Developing client inventory dashboard in hackathon."}, {"title": "Kudos from Atlassian", "year": "2020", "description": "For contribution in their performance improvement initiative."}, {"title": "Advent of Code (AOC) with all 50 stars", "year": "2020", "description": "Completed AOC with all 50 stars and ranked 2 on office leaderboard"}, {"title": "Servicenow Lama Award", "year": "2022", "description": "For designing, architect & leading UI development of most critical project of Q3"}]}
+{
+    "name": "Akshay Khanna",
+    "email": "akshay9911102163@gmail.com",
+    "phone": "+91-9591850974",
+    "image_url": "https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI",
+    "work_experience": [
+        {
+            "title": "Sr. Software Engineer",
+            "company": "Servicenow",
+            "duration": "September 2021 - Present",
+            "description": " As a Senior Software Engineer at Microsoft, you will be a founding member of the new Special Cloud team leading a team of 8+ and driving innovation in the next generation of autonomous cloud infrastructure for Microsoft's M365 Sovereign and Regulated cloud offerings. You will have the opportunity to make an impact at massive scale, with room for growth in discipline, team-building, and learning while working in foundational cloud technologies.* Developed and architect multiple product apps, microservices, REST API & UI components as part of the WSD (workplace management suite) product team using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI.\t+ Designed the architecture and led the complete UI heavy development of a complex Scenario Planning (Office space planning & visualization) app.\t+ Built a complex data visualization and planning UI component called Stack Plan from scratch and recursive hierarchical tree visualization."
+        },
+        {
+            "title": "Senior Consultant",
+            "company": "Thoughtworks",
+            "duration": "September 2018 - September 2021",
+            "description": " As a Senior Software Engineer at Microsoft, you will be an integral part of the new Special Cloud team, leading a team of 8+ and driving innovation in the next generation of autonomous cloud infrastructure for M365 Sovereign and Regulated cloud offerings. You will have the opportunity to make a significant impact at scale, with room for growth in discipline, team-building, and learning while working on foundational cloud technologies.Previous work experience:* Worked on the development and performance improvement of Atlassian's core UI design components in coordination with their Design System Team. Refactored and added features, contributed to open-source libraries, and wrote code mods (AST JSCodeShift) for easy shipping of these components.* Built a complex distributed system for UK's leading Outdoor advertisement company. Developed multiple microservices and REST APIs using Golang, Java, Python, and MongoDB, following DDD to build them. Wrote multiple CRON jobs, handled concurrency (via routines) and managed the event-driven architecture using SNS & SQS. Built UI using React Redux and used linear programming (GLPK) to solve their inventory optimization problem. Wrote unit, integration, and contract tests for each microservice and followed TDD & pair programming."
+        },
+        {
+            "title": "Product Developer",
+            "company": "Tieto",
+            "duration": "September 2017 - September 2018",
+            "description": " As a Senior Software Engineer at Microsoft, you will be a founding member of the new Special Cloud team leading a team of 8+ and driving innovation in the next generation of autonomous cloud infrastructure for Microsoft's M365 Sovereign and Regulated cloud offerings. You will have the opportunity to make an impact at massive scale, with room for growth in discipline, team-building, and learning while working in foundational cloud technologies.* Developed patient list & task management app from scratch for a Nordic company using Angular 5+ front-end and Java MVC (+ SQL) REST microservices back-end.* Worked as full-stack developer in healthcare product development teams, responsible for developing user stories, writing unit tests (jasmine + karma + jUnit), finding bugs, proposing & implementing suggestions and enhancements to the product, giving demos after sprints, and attending/conducting grooming, swarming, and retrospective meetings with product OPO's."
+        },
+        {
+            "title": "Software Engineer",
+            "company": "Infosys",
+            "duration": "September 2015 - September 2017",
+            "description": " As a Senior Software Engineer at Microsoft, you will lead a team of 8+ in driving innovation in the next generation of autonomous cloud infrastructure for M365 Sovereign and Regulated cloud offerings. You will have the opportunity to make an impact at massive scale, with room for growth in discipline, team-building, and learning while working in foundational cloud technologies.* Developed user stories and change requests as part of an agile Java backend development team for a Telecom Client Product.* Wrote multiple utilities and automation scripts to automate project infrastructure work and improve application stability. These included:\t+ Bot for Auto Incident Resolver on BMC IATM (Java & Sikuli lib)\t+ Bot for clearing stalls (stuck processes) using C#, WPF & Selenium\t+ Auto Start/Stop Production Jobs & Server (C#, Background Worker)\t+ Server Log Management utility (C#, Ionic Zip lib)"
+        }
+    ],
+    "skills": [
+        "* Programming languages: Java",
+        "Python",
+        "JavaScript (with expertise in React JS and Redux)",
+        "Golang",
+        "C#* Databases: MySQL",
+        "MS SQL",
+        "MongoDB* Frameworks",
+        "tools",
+        "and design patterns: ReactJS",
+        "Angular 2+",
+        "Pact for contract testing",
+        "ServiceNow",
+        "CSS-in-JS",
+        "Backend-for-frontend",
+        "DDD",
+        "Open AI",
+        "LLM",
+        "Gen AI* Cloud and DevOps technologies: AWS",
+        "Azure",
+        "SNS",
+        "SQS",
+        "Rabbit MQ",
+        "Docker",
+        "CI/CD pipelines",
+        "Jenkins* Engineering practices: TDD",
+        "Pair programming",
+        "XP",
+        "Test-Driven Development (TBD)",
+        "Object-Oriented Programming (OOPs)",
+        "Clean code strategies",
+        "and cross-functional teams* Data structures and algorithms: Distributed systems",
+        "Microservices",
+        "REST API design",
+        "Design Systems and libraries",
+        "System Designing and Architecture DesigningAs a seasoned software engineer with extensive experience in managing highly complex software services at internet scale",
+        "you have demonstrated expertise in multiple programming languages",
+        "databases",
+        "frameworks",
+        "and engineering practices. Your proficiency in cloud and related technologies spans over 5 years",
+        "with a strong background in architecture",
+        "performance",
+        "scale",
+        "and backend development. Additionally",
+        "you have honed your engineering management skills for over 2 years",
+        "with a degree in Computer Science or equivalent experience."
+    ],
+    "awards": [
+        {
+            "title": "Bronze Badge (HackeRank) & Qualified GCM",
+            "year": "2015",
+            "description": "Won Bronze badge in algorithms domain at HackerRank. <br/> Qualified Google Code Jam (GCM) round one"
+        },
+        {
+            "title": "Insta Award Infosys",
+            "year": "2016",
+            "description": "Excellent work done in automation in client project."
+        },
+        {
+            "title": "MVP in 3 sprints, Tieto",
+            "year": "2017",
+            "description": "Awarded by team for contribution & guidance in dev"
+        },
+        {
+            "title": "Floe Ninja ThoughtWorks",
+            "year": "2019",
+            "description": "Developing client inventory dashboard in hackathon."
+        },
+        {
+            "title": "Kudos from Atlassian",
+            "year": "2020",
+            "description": "For contribution in their performance improvement initiative."
+        },
+        {
+            "title": "Advent of Code (AOC) with all 50 stars",
+            "year": "2020",
+            "description": "Completed AOC with all 50 stars and ranked 2 on office leaderboard"
+        },
+        {
+            "title": "Servicenow Lama Award",
+            "year": "2022",
+            "description": "For designing, architect & leading UI development of most critical project of Q3"
+        }
+    ]
+}

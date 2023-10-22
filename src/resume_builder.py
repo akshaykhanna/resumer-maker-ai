@@ -11,8 +11,8 @@ from constants import (
     PDF_OPTIONS,
 )
 
-from job_description import get_summarize_jd
-from resume_data import get_resume_data, get_resume_data_based_on_jd
+from job_description import summarize_jd, write_jd_to_file
+from resume_data import get_resume_data, get_resume_data_updated_based_on_jd
 
 
 class ResumeBuilder:
@@ -20,7 +20,7 @@ class ResumeBuilder:
         self, resume_template=RESUME_TEMPLATE_FILE, resume_data_file=RESUME_DATA_JSON
     ):
         self._load_template(resume_template)
-        self.resume_data = get_resume_data(resume_data_file)
+        self.resume_data_file = resume_data_file
 
     def _create_resume_html_file_with_data(self):
         html_content = self.template.render(self.resume_data)
@@ -44,9 +44,12 @@ class ResumeBuilder:
     def build(self, builder_obj):
         if builder_obj["should_tweak_resume_data_based_on_jd"]:
             jd = builder_obj["jd"]
+            write_jd_to_file(jd)
             if(builder_obj["should_summarize_jd"]):
-                jd = get_summarize_jd(jd)
-            self.resume_data = get_resume_data_based_on_jd(self.resume_data, jd)
+                summarize_jd(jd)
+            self.resume_data = get_resume_data_updated_based_on_jd(self.resume_data_file)
+        else:
+            self.resume_data = get_resume_data(self.resume_data_file)
             
         self._create_resume_html_file_with_data()
         self._generate_pdf_from_html()

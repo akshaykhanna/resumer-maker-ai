@@ -4,7 +4,8 @@ from llama_llm import LLM
 from constants import (
     OUTPUT_FOLDER_PATH,
     MODELS,
-    SUMMARIZED_DATA_JSON
+    SUMMARIZED_JD_JSON,
+    JD_JSON
 )
 
 
@@ -16,7 +17,7 @@ def _get_summarize_prompt(section, title, company, text, no_of_lines=3):
          
         '''
 
-def prune_response(response):
+def _prune_response(response):
     # extract string after 'Summary:' and before '\n'
     responses = response.split("Summary:")
     prune_response = len(responses) > 1 and responses[1] or responses[0]
@@ -24,8 +25,27 @@ def prune_response(response):
     prune_response = prune_response.replace("\n", "")
     return prune_response
 
-def get_summarize_jd(jd):
-        summarize_fn_with_path = f"{OUTPUT_FOLDER_PATH}{SUMMARIZED_DATA_JSON}"
+def get_summarize_jd_or_jd():
+    summarize_fn_with_path = f"{OUTPUT_FOLDER_PATH}{SUMMARIZED_JD_JSON}"
+    # check if summarize jd file already exists
+    if os.path.exists(summarize_fn_with_path):
+        with open(summarize_fn_with_path, "r") as jd_file:
+            jd = json.load(jd_file)
+            return jd
+    elif os.path.exists(f"{OUTPUT_FOLDER_PATH}{JD_JSON}"):
+        with open(f"{OUTPUT_FOLDER_PATH}{JD_JSON}", "r") as jd_file:
+            jd = json.load(jd_file)
+            return jd
+
+def write_jd_to_file(jd):
+    jd_fn_with_path = f"{OUTPUT_FOLDER_PATH}{JD_JSON}"
+    # write jd object to JSON file
+    with open(jd_fn_with_path, "w") as jd_file:
+        json.dump(jd, jd_file)
+        return jd
+
+def summarize_jd(jd):
+        summarize_fn_with_path = f"{OUTPUT_FOLDER_PATH}{SUMMARIZED_JD_JSON}"
         # check if summarize jd file already exists
         if os.path.exists(summarize_fn_with_path):
             with open(summarize_fn_with_path, "r") as jd_file:
@@ -33,8 +53,8 @@ def get_summarize_jd(jd):
                 return jd
       
         llm = LLM(MODELS["resume"]["name"])
-        jd["responsibilities"] = prune_response(llm.generateResponse(_get_summarize_prompt("responsibilities", jd["title"], jd["company"], jd["responsibilities"])))
-        jd["skills"] = prune_response(llm.generateResponse(_get_summarize_prompt("skills", jd["title"], jd["company"], jd["skills"])))
+        jd["responsibilities"] = _prune_response(llm.generateResponse(_get_summarize_prompt("responsibilities", jd["title"], jd["company"], jd["responsibilities"])))
+        jd["skills"] = _prune_response(llm.generateResponse(_get_summarize_prompt("skills", jd["title"], jd["company"], jd["skills"])))
         # write summarize jd object to JSON file
         with open(summarize_fn_with_path, "w") as jd_file:
             json.dump(jd, jd_file)
@@ -64,4 +84,4 @@ if __name__ == "__main__":
             Degree in CS or equivalent experience
             """,
     }
-    get_summarize_jd(jd)
+    summarize_jd(jd)
