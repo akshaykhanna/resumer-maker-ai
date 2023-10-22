@@ -7,11 +7,23 @@ from constants import (
     SUMMARIZED_DATA_JSON
 )
 
-def _get_summarize_prompt(section, title, company, text, no_of_lines=2):
+
+
+def _get_summarize_prompt(section, title, company, text, no_of_lines=3):
         return f'''
-         Summarize below {section} text for {title} at {company} in max {no_of_lines} lines. Return only summarize text as response & don't add any pre text like Sure! ...
+         Summarize below job {section} text for {title} role in max {no_of_lines} lines. Return only summarize text starting as 'Summary:'
          `{text}`
+         
         '''
+
+def prune_response(response):
+    # extract string after 'Summary:' and before '\n'
+    responses = response.split("Summary:")
+    prune_response = len(responses) > 1 and responses[1] or responses[0]
+    # remove new line characters
+    prune_response = prune_response.replace("\n", "")
+    return prune_response
+
 def get_summarize_jd(jd):
         summarize_fn_with_path = f"{OUTPUT_FOLDER_PATH}{SUMMARIZED_DATA_JSON}"
         # check if summarize jd file already exists
@@ -20,9 +32,9 @@ def get_summarize_jd(jd):
                 jd = json.load(jd_file)
                 return jd
       
-        llm = LLM(MODELS["llama"]["name"])
-        jd["responsibilities"] = llm.generateResponse(_get_summarize_prompt("responsibilities", jd["title"], jd["company"], jd["responsibilities"]))
-        jd["skills"] = llm.generateResponse(_get_summarize_prompt("skills", jd["title"], jd["company"], jd["skills"]))
+        llm = LLM(MODELS["resume"]["name"])
+        jd["responsibilities"] = prune_response(llm.generateResponse(_get_summarize_prompt("responsibilities", jd["title"], jd["company"], jd["responsibilities"])))
+        jd["skills"] = prune_response(llm.generateResponse(_get_summarize_prompt("skills", jd["title"], jd["company"], jd["skills"])))
         # write summarize jd object to JSON file
         with open(summarize_fn_with_path, "w") as jd_file:
             json.dump(jd, jd_file)
