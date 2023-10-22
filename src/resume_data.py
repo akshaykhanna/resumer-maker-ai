@@ -27,7 +27,7 @@ def _prune_response(response):
 
 def _get_work_exp_prompt(work_exp, responsibilities_prompt):
     return f"""
-    Update below job work experience as per {responsibilities_prompt} and return only work experience text starting as 'Update:'
+    Update below job work experience as per {responsibilities_prompt} and return only work experience html text starting as 'Update:'
     \n {work_exp}
     """
 
