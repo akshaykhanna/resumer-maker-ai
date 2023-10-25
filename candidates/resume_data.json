@@ -1,6 +1,7 @@
 {
     "name": "Akshay Khanna",
     "email": "akshay9911102163@gmail.com",
+    "linkedin": "",
     "phone": "+91-9591850974",
     "image_url": "https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI",
     "work_experience": [
@@ -8,24 +9,32 @@
             "title": "Sr. Software Engineer",
             "company": "Servicenow",
             "duration": "September 2021 - Present",
+            "startYear": "09/2021 ",
+            "endYear": "Present",
             "description": "* Developing and architect multiple product apps, microservices, REST API & UI components as part of the WSD (workplace management suite) product team using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI. <br/> * Designed the architecture & led the complete UI heavy development of a complex Scenario Planning (Office space planning & visualization) app, & for that, also built a complex data visualization and planning UI component called Stack Plan from scratch and recursive hierarchical tree visualization."
         },
         {
             "title": "Senior Consultant",
             "company": "Thoughtworks",
             "duration": "September 2018 - September 2021",
+            "startYear": "09/2018 ",
+            "endYear": "09/2021",
             "description": "* Worked on the development & performance improvement of Atlassian's core UI design components in coordination with their Design System Team. Refactor & add features, contribute to there open source libraries, & wrote code mods (AST JSCodeShift) for easy shipping of these components. <br/> * Build a complex distributed system for UK's leading Outdoor advertisement company. Have built multiple microservices & REST API using Golang, Java, Python & MongoDB & followed DDD to build them. Written multiple CRON jobs, handled concurrency (via routines) & managed the event-driven architecture using SNS & SQS. Built UI using React Redux and used linear programming (GLPK) to solve their inventory optimization problem. Written unit, integration & contract test for each microservice and followed TDD & pair programming."
         },
         {
             "title": "Product Developer",
             "company": "Tieto",
             "duration": "September 2017 - September 2018",
+            "startYear": "09/2017 ",
+            "endYear": "09/2018",
             "description": "* Part of Tieto's (NORDICS company) Healthcare Product development teams, built 2 apps one was patient list & task management app from scratch for it. <br/> * Worked as full stack developer in these teams using Angular 5+ in front-end and Java MVC (+ SQL) REST microservices on the back- end. Have to develop user stories, write a unit test (jasmine + karma + jUnit), find bugs, purpose & implement suggestion & enhancements to the product, give demo after sprint’s and attend/conduct grooming, swarming, and retrospective meetings with product OPO’s"
         },
         {
             "title": "Software Engineer",
             "company": "Infosys",
             "duration": "September 2015 - September 2017",
+            "startYear": "09/2015 ",
+            "endYear": "09/2017",
             "description": "* Develop user stories and change requests as part of an agile Java backend development team for a Telecom Client Product. <br/> * Wrote single-handed multiple utilities & automation scripts to automate the above project infra work & improve application stability. Some of them were Bot for Auto Incident Resolver on BMC IATM ( Java & Sikuli lib), Bot for clearing stalls (stuck processes) using C#, WPF & Selenium, Auto Start/Stop Production Jobs & Server (C#, Background Worker) and Server Log Management utility (C#, Ionic Zip lib)."
         }
     ],
@@ -72,6 +81,16 @@
             "title": "Servicenow Lama Award",
             "year": "2022",
             "description": "For designing, architect & leading UI development of most critical project of Q3"
+        }
+    ],
+    "education": [
+        {
+            "degree": "BTech ECE",
+            "place": "JIIT",
+            "location": "Noida",
+            "startYear": "2011",
+            "endYear": "2015",
+            "description": "Completed B.Tech in Electronics & Communication Engineering with 7.9 CGPA"
         }
     ]
 }
