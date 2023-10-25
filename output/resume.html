@@ -3,749 +3,220 @@
 
 <head>
     <title>Resume</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="dep/normalize.css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="dep/Font-Awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        @page {
-            size: letter portrait;
-            margin: 0;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        :root {
-            --page-width: 8.5in;
-            --page-height: 11in;
-            --main-width: 6.4in;
-            --sidebar-width: calc(var(--page-width) - var(--main-width));
-            --decorator-horizontal-margin: 0.2in;
-
-            --sidebar-horizontal-padding: 0.2in;
-
-            /* XXX: using px for very good precision control */
-            --decorator-outer-offset-top: .625rem;
-            --decorator-outer-offset-left: -0.3438rem;
-            --decorator-border-width: .0625rem;
-            --decorator-outer-dim: .5625rem;
-            --decorator-border: .0625rem solid #ccc;
-
-            --row-blocks-padding-top: 5pt;
-            --date-block-width: 0.6in;
-
-            --main-blocks-title-icon-offset-left: -19pt;
-        }
-
         body {
-            width: var(--page-width);
-            height: var(--page-height);
-            margin: 0;
-            font-family: "Open Sans", sans-serif;
-            font-weight: 300;
-            line-height: 1.3;
-            color: #444;
-            hyphens: auto;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 1.25rem;
         }
 
-        h1,
-        h2,
-        h3 {
-            margin: 0;
-            color: #000;
-        }
-
-        li {
-            list-style-type: none;
-        }
-
-        #main {
-            float: left;
-            width: var(--main-width);
-            padding: 0.25in 0.25in 0 0.25in;
-            font-size: 7pt;
-        }
-
-        #sidebar {
-            float: right;
-            position: relative;
-            /* for disclaimer */
-            width: var(--sidebar-width);
-            height: 100%;
-            padding: 0.6in var(--sidebar-horizontal-padding);
-            background-color: #f2f2f2;
-            font-size: 8.5pt;
-        }
-
-        /* main */
-
-        /** big title **/
-        #title,
-        h1,
-        h2 {
-            text-transform: uppercase;
-        }
-
-        #title {
-            position: relative;
-            left: 0.55in;
-            margin-bottom: 0.3in;
-            line-height: 1.2;
-        }
-
-        #title h1 {
-            font-weight: 300;
-            font-size: 18pt;
-            line-height: 1.5;
-        }
-
-        #title h1 strong {
-            margin: auto 2pt auto 4pt;
-            font-weight: 600;
-        }
-
-        .subtitle {
-            font-size: 8pt;
-        }
-
-        /*** categorial blocks ***/
-
-        .main-block {
-            margin-top: 0.1in;
-        }
-
-        #main h2 {
-            position: relative;
-            top: var(--row-blocks-padding-top);
-            /* XXX: .0313rem for aligning fx printing */
-            left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
-            font-weight: 400;
-            font-size: 11pt;
-            color: #555;
-        }
-
-        #main h2>i {
-            /* use absolute position to prevent icon's width from misaligning title */
-            /* assigning a fixed width here is no better due to needing to align decorator
-     line too */
-            position: absolute;
-            left: var(--main-blocks-title-icon-offset-left);
-            z-index: 1;
-            /* over decorator line */
-            color: #444;
-        }
-
-        #main h2::after {
-            /* extends the decorator line */
-            height: calc(var(--row-blocks-padding-top) * 2);
-            position: relative;
-            top: calc(-1 * var(--row-blocks-padding-top));
-            /* XXX: .0313rem for aligning fx printing */
-            left: calc(-1 * var(--decorator-horizontal-margin));
-            display: block;
-            border-left: var(--decorator-border);
-            z-index: 0;
-            line-height: 0;
-            font-size: 0;
-            content: ' ';
-        }
-
-        /**** minor tweaks on the icon fonts ****/
-        #main h2>.fa-graduation-cap {
-            left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
-            top: 2pt;
-        }
-
-        #main h2>.fa-suitcase {
-            top: 1pt;
-        }
-
-        #main h2>.fa-folder-open {
-            top: 1.5pt;
-        }
-
-        /**** individual row blocks (date - decorator - details) ****/
-
-        .blocks {
+        .header {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: #007bff;
+            color: #fff;
             display: flex;
-            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            .heading-info {
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+            }
+
+            .flex-item {
+                flex: 1;
+                /* This property makes each child element equally share available space. */
+                flex-basis: 0;
+                /* This ensures that the width is determined solely by the 'flex' property. */
+
+            }
         }
 
-        .blocks>div {
-            padding-top: var(--row-blocks-padding-top);
+        .image {
+            width: 7.5rem;
+            height: 7.5rem;
+            border: .125rem solid white;
         }
 
-        .date {
-            flex: 0 0 var(--date-block-width);
-            padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
-            padding-right: var(--decorator-horizontal-margin);
-            font-size: 7pt;
-            text-align: right;
-            line-height: 1;
+        h1 {
+            font-size: 28px;
+            margin: 0;
         }
 
-        .date span {
-            display: block;
+        h6 {
+            font-size: 19.2px;
         }
 
-        .date span:nth-child(2)::before {
-            position: relative;
-            top: 1pt;
-            right: 5.5pt;
-            display: block;
-            height: 10pt;
-            content: '|';
+        .bio {
+            text-align: left;
+            font-weight: 400;
         }
 
-        .decorator {
-            flex: 0 0 0;
-            position: relative;
-            width: 2pt;
-            min-height: 100%;
-            border-left: var(--decorator-border);
-        }
-
-        /*
- * XXX: Use two filled circles to achieve the circle-with-white-border effect.
- * The normal technique of only using one pseudo element and
- * border: .0625rem solid white; style makes firefox erroneously either:
- * 1) overflows the grayshade background (if no background-clip is set), or
- * 2) shows decorator line which should've been masked by the white border
- *
- */
-
-        .decorator::before {
-            position: absolute;
-            top: var(--decorator-outer-offset-top);
-            left: var(--decorator-outer-offset-left);
-            content: ' ';
-            display: block;
-            width: var(--decorator-outer-dim);
-            height: var(--decorator-outer-dim);
-            border-radius: calc(var(--decorator-outer-dim) / 2);
-            background-color: #fff;
-        }
-
-        .decorator::after {
-            position: absolute;
-            top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
-            left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
-            content: ' ';
-            display: block;
-            width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-            height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
-            border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
-            background-color: #555;
-        }
-
-        .blocks:last-child .decorator {
-            /* slightly shortens it */
-            margin-bottom: 0.25in;
-        }
-
-        /***** fine-tunes on the details block where the real juice is *****/
-
-        .details {
-            flex: 1 0 0;
-            padding-left: var(--decorator-horizontal-margin);
-            padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important;
-            /* not sure why but this is needed for better alignment */
-        }
-
-        .details header {
-            color: #000;
-        }
-
-        .details h3 {
-            font-size: 9pt;
-        }
-
-        .main-block:not(.concise) .details div {
-            margin: 0.18in 0 0.1in 0;
-        }
-
-        .main-block:not(.concise) .blocks:last-child .details div {
-            margin-bottom: 0;
-        }
-
-        .main-block.concise .details div:not(.concise) {
-            /* use padding to work around the fact that margin doesn't affect floated
-     neighboring elements */
-            padding: 0.05in 0 0.07in 0;
-        }
-
-        .details .place {
-            float: left;
-            font-size: 7.5pt;
-        }
-
-        .details .location {
-            float: right;
-        }
-
-        .details div {
-            clear: both;
-        }
-
-        .details .location::before {
+        .contact-info {
+            margin-top: .3125rem;
             display: inline-block;
-            position: relative;
-            right: 3pt;
-            top: 0.25pt;
-            font-family: FontAwesome;
-            font-weight: normal;
-            font-style: normal;
-            text-decoration: inherit;
-            content: "\f041";
         }
 
-        /***** fine-tunes on the lists... *****/
-
-        #main ul {
-            padding-left: 0.07in;
-            margin: 0.08in 0;
+        .main {
+            display: flex;
+            .left {
+                flex: 6;
+                padding: 20px;
+            }
+            .right {
+                flex: 4;
+                padding: 20px;
+            }
         }
 
-        #main li {
-            margin: 0 0 0.025in 0;
+        .section {
+            margin-bottom: 1.25rem;
+            background-color: #fff;
+            padding: .9375rem;
+            border-radius: .3125rem;
+            box-shadow: 0rem .125rem .3125rem rgba(0, 0, 0, 0.1);
         }
 
-        /****** customize list symbol style ******/
-        #main li::before {
-            position: relative;
-            margin-left: -4.25pt;
-            content: '• ';
+        .section-heading {
+            font-size: 1.25rem;
+            font-weight: bold;
         }
 
-        .details .concise ul {
-            margin: 0 !important;
-            -webkit-columns: 2;
-            -moz-columns: 2;
-            columns: 2;
-        }
-
-        .details .concise li {
-            margin: 0 !important;
-        }
-
-        .details .concise li {
-            margin-left: 0 !important;
-        }
-
-
-
-        /* sidebar */
-
-        #sidebar h1 {
-            font-weight: 400;
-            font-size: 11pt;
-        }
-
-        .side-block {
-            margin-top: 0.5in;
-        }
-
-        #contact ul {
-            margin-top: 0.05in;
-            padding-left: 0;
-            font-family: "Source Code Pro";
-            font-weight: 400;
-            line-height: 1.75;
-        }
-
-        #contact li>i {
-            width: 9pt;
-            /* for text alignment */
-            text-align: right;
-        }
-
-        #skills {
-            line-height: 1.5;
-        }
-
-        #skills ul {
-            margin: 0.05in 0 0.15in;
-            padding: 0;
-        }
-
-        #disclaimer {
-            position: absolute;
-            bottom: var(--sidebar-horizontal-padding);
-            right: var(--sidebar-horizontal-padding);
-            font-size: 7.5pt;
-            font-style: italic;
-            line-height: 1.1;
-            text-align: right;
-            color: #777;
-        }
-
-        #disclaimer code {
-            color: #666;
-            font-family: "Source Code Pro";
-            font-weight: 400;
-            font-style: normal;
+        .sub-section {
+            margin-left: 1.25rem;
         }
     </style>
 </head>
 
-<body lang="en">
-    <section id="main">
-        <header id="title">
-            <h1>Akshay Khanna</h1>
-            
-        </header>
-        <section class="main-block">
-            <h2>
-                <i class="fa fa-suitcase"></i> Experiences
-            </h2>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>09/2021 </span><span>Present</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Sr. Software Engineer</h3>
-                        <span class="place">Servicenow</span>
-                        <!-- <span class="location">(remote)</span> -->
-                    </header>
-                    <div>
-                        * Developing and architect multiple product apps, microservices, REST API & UI components as part of the WSD (workplace management suite) product team using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI. <br/> * Designed the architecture & led the complete UI heavy development of a complex Scenario Planning (Office space planning & visualization) app, & for that, also built a complex data visualization and planning UI component called Stack Plan from scratch and recursive hierarchical tree visualization.
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac. Maecenas viverra tortor eget convallis vestibulum.
-                                Donec pulvinar venenatis est, non sollicitudin metus laoreet sed. Fusce tincidunt felis
-                                nec neque aliquet porttitor</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>09/2018 </span><span>09/2021</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Senior Consultant</h3>
-                        <span class="place">Thoughtworks</span>
-                        <!-- <span class="location">(remote)</span> -->
-                    </header>
-                    <div>
-                        * Worked on the development & performance improvement of Atlassian's core UI design components in coordination with their Design System Team. Refactor & add features, contribute to there open source libraries, & wrote code mods (AST JSCodeShift) for easy shipping of these components. <br/> * Build a complex distributed system for UK's leading Outdoor advertisement company. Have built multiple microservices & REST API using Golang, Java, Python & MongoDB & followed DDD to build them. Written multiple CRON jobs, handled concurrency (via routines) & managed the event-driven architecture using SNS & SQS. Built UI using React Redux and used linear programming (GLPK) to solve their inventory optimization problem. Written unit, integration & contract test for each microservice and followed TDD & pair programming.
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac. Maecenas viverra tortor eget convallis vestibulum.
-                                Donec pulvinar venenatis est, non sollicitudin metus laoreet sed. Fusce tincidunt felis
-                                nec neque aliquet porttitor</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>09/2017 </span><span>09/2018</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Product Developer</h3>
-                        <span class="place">Tieto</span>
-                        <!-- <span class="location">(remote)</span> -->
-                    </header>
-                    <div>
-                        * Part of Tieto's (NORDICS company) Healthcare Product development teams, built 2 apps one was patient list & task management app from scratch for it. <br/> * Worked as full stack developer in these teams using Angular 5+ in front-end and Java MVC (+ SQL) REST microservices on the back- end. Have to develop user stories, write a unit test (jasmine + karma + jUnit), find bugs, purpose & implement suggestion & enhancements to the product, give demo after sprint’s and attend/conduct grooming, swarming, and retrospective meetings with product OPO’s
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac. Maecenas viverra tortor eget convallis vestibulum.
-                                Donec pulvinar venenatis est, non sollicitudin metus laoreet sed. Fusce tincidunt felis
-                                nec neque aliquet porttitor</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>09/2015 </span><span>09/2017</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Software Engineer</h3>
-                        <span class="place">Infosys</span>
-                        <!-- <span class="location">(remote)</span> -->
-                    </header>
-                    <div>
-                        * Develop user stories and change requests as part of an agile Java backend development team for a Telecom Client Product. <br/> * Wrote single-handed multiple utilities & automation scripts to automate the above project infra work & improve application stability. Some of them were Bot for Auto Incident Resolver on BMC IATM ( Java & Sikuli lib), Bot for clearing stalls (stuck processes) using C#, WPF & Selenium, Auto Start/Stop Production Jobs & Server (C#, Background Worker) and Server Log Management utility (C#, Ionic Zip lib).
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac. Maecenas viverra tortor eget convallis vestibulum.
-                                Donec pulvinar venenatis est, non sollicitudin metus laoreet sed. Fusce tincidunt felis
-                                nec neque aliquet porttitor</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-        </section>
-        <section class="main-block">
-            <h2>
-                <i class="fa fa-folder-open"></i> Awards and Recognitions
-            </h2>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2015</span><span>2015</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Bronze Badge (HackeRank) & Qualified GCM</h3>
-                        <span class="place">Some workplace</span>
-                    </header>
-                    <div>
-                        Won Bronze badge in algorithms domain at HackerRank. <br/> Qualified Google Code Jam (GCM) round one
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2016</span><span>2016</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Insta Award Infosys</h3>
-                        <span class="place">Some workplace</span>
-                    </header>
-                    <div>
-                        Excellent work done in automation in client project.
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2017</span><span>2017</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>MVP in 3 sprints, Tieto</h3>
-                        <span class="place">Some workplace</span>
-                    </header>
-                    <div>
-                        Awarded by team for contribution & guidance in dev
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2019</span><span>2019</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Floe Ninja ThoughtWorks</h3>
-                        <span class="place">Some workplace</span>
-                    </header>
-                    <div>
-                        Developing client inventory dashboard in hackathon.
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2020</span><span>2020</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Kudos from Atlassian</h3>
-                        <span class="place">Some workplace</span>
-                    </header>
-                    <div>
-                        For contribution in their performance improvement initiative.
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2020</span><span>2020</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Advent of Code (AOC) with all 50 stars</h3>
-                        <span class="place">Some workplace</span>
-                    </header>
-                    <div>
-                        Completed AOC with all 50 stars and ranked 2 on office leaderboard
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2022</span><span>2022</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>Servicenow Lama Award</h3>
-                        <span class="place">Some workplace</span>
-                    </header>
-                    <div>
-                        For designing, architect & leading UI development of most critical project of Q3
-                        <!-- <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio. Vestibulum dapibus pharetra odio,
-                                egestas ullamcorper ipsum congue ac</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec mi ante. Etiam odio
-                                eros, placerat eu metus id, gravida eleifend odio</li>
-                        </ul> -->
-                    </div>
-                </div>
-            </section>
-            
-        </section>
-        <section class="main-block concise">
-            <h2>
-                <i class="fa fa-graduation-cap"></i> Education
-            </h2>
-            
-            <section class="blocks">
-                <div class="date">
-                    <span>2011</span><span>2015</span>
-                </div>
-                <div class="decorator">
-                </div>
-                <div class="details">
-                    <header>
-                        <h3>BTech ECE</h3>
-                        <span class="place">JIIT</span>
-                        <span class="location">Noida</span>
-                    </header>
-                    <div>Completed B.Tech in Electronics & Communication Engineering with 7.9 CGPA</div>
-                </div>
-            </section>
-            
-        </section>
-    </section>
-    <aside id="sidebar">
-        <div class="side-block" id="contact">
-            <h1>
-                Contact Info
-            </h1>
-            <ul>
-                <li><i class="fa fa-globe"></i>Akshay Khanna</li>
+<body>
+    <div class="container">
+        <div class="header">
+            <!--Divide it horizontally into 3 parts-->
+            <!--1st part: Info-->
+            <div class="heading-info flex-item">
+                <h1>Akshay Khanna</h1>
                 
-                
-                <li><i class="fa fa-envelope"></i>akshay9911102163@gmail.com</li>
-                
-                
-                <li><i class="fa fa-phone"></i> +91-9591850974</li>
-                
-            </ul>
+                <h6>Senior software developer</h3>
+                    
+                    
+                    <div class="bio">Senior full-stack developer with an 8+ years of experience in software development and a history and love of solving complex CS problems.</div>
+                    
+            </div>
+            <!--2nd part: image -->
+            <div class="candidate-img-container flex-item">
+                <img style="border-radius: 50%; border: .125rem solid white" src="https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI" alt="Profile Image"
+                    class="image">
+            </div>
+            <!--3rd part: contact-->
+            <div class="contact-info flex-item">
+                <p><i class="fa fa-envelope"></i>akshay9911102163@gmail.com</p>
+                <p><i class="fa fa-phone"></i>+91-9591850974</p>
+            </div>
+
         </div>
-        <div class="side-block" id="skills">
-            <h1>
-                Skills
-            </h1>
-            <ul>
+        <div class="main">
+            <div class="section left">
+                <div class="section-heading">Work Experience</div>
                 
-                <li>Languages: JavaScript, Python, Java, Golang, & C#</li>
+                <div class="sub-section">
+                    <p><strong>Sr. Software Engineer - Servicenow</strong></p>
+                    <p>September 2021 - Present</p>
+                    <p>* Developing and architect multiple product apps, microservices, REST API & UI components as part of the WSD (workplace management suite) product team using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI. <br/> * Designed the architecture & led the complete UI heavy development of a complex Scenario Planning (Office space planning & visualization) app, & for that, also built a complex data visualization and planning UI component called Stack Plan from scratch and recursive hierarchical tree visualization.</p>
+                </div>
                 
-                <li>Database: MySQL, MS SQL, & MongoDb</li>
+                <div class="sub-section">
+                    <p><strong>Senior Consultant - Thoughtworks</strong></p>
+                    <p>September 2018 - September 2021</p>
+                    <p>* Worked on the development & performance improvement of Atlassian's core UI design components in coordination with their Design System Team. Refactor & add features, contribute to there open source libraries, & wrote code mods (AST JSCodeShift) for easy shipping of these components. <br/> * Build a complex distributed system for UK's leading Outdoor advertisement company. Have built multiple microservices & REST API using Golang, Java, Python & MongoDB & followed DDD to build them. Written multiple CRON jobs, handled concurrency (via routines) & managed the event-driven architecture using SNS & SQS. Built UI using React Redux and used linear programming (GLPK) to solve their inventory optimization problem. Written unit, integration & contract test for each microservice and followed TDD & pair programming.</p>
+                </div>
                 
-                <li>Frameworks/Tools/Design Patterns: React JS, Redux, Angular 2+, Pact for contract testing, Servicenow, CSS in JS , Backend for the frontend, DDD, Open AI, LLM ,Gen AI</li>
+                <div class="sub-section">
+                    <p><strong>Product Developer - Tieto</strong></p>
+                    <p>September 2017 - September 2018</p>
+                    <p>* Part of Tieto's (NORDICS company) Healthcare Product development teams, built 2 apps one was patient list & task management app from scratch for it. <br/> * Worked as full stack developer in these teams using Angular 5+ in front-end and Java MVC (+ SQL) REST microservices on the back- end. Have to develop user stories, write a unit test (jasmine + karma + jUnit), find bugs, purpose & implement suggestion & enhancements to the product, give demo after sprint’s and attend/conduct grooming, swarming, and retrospective meetings with product OPO’s</p>
+                </div>
                 
-                <li>Cloud/Devops: AWS, Azure, SNS, SQS, Rabbit MQ, Docker, CI/CD pipelines & Jenkins</li>
+                <div class="sub-section">
+                    <p><strong>Software Engineer - Infosys</strong></p>
+                    <p>September 2015 - September 2017</p>
+                    <p>* Develop user stories and change requests as part of an agile Java backend development team for a Telecom Client Product. <br/> * Wrote single-handed multiple utilities & automation scripts to automate the above project infra work & improve application stability. Some of them were Bot for Auto Incident Resolver on BMC IATM ( Java & Sikuli lib), Bot for clearing stalls (stuck processes) using C#, WPF & Selenium, Auto Start/Stop Production Jobs & Server (C#, Background Worker) and Server Log Management utility (C#, Ionic Zip lib).</p>
+                </div>
                 
-                <li>Practices: TDD, Pair programming, XP, TBD, OOPs, Clean code strategies, & cross-functional teams.</li>
-                
-                <li>Data Structures, Algorithms, Distributed systems, Micro services , REST API, Design System & libraries, System Designing & Architecture Designing</li>
-                
-            </ul>
+            </div>
+
+            <div class="right">
+                <div class="section" style="background-color: #f8f9fa;">
+                    <div class="section-heading">Skills</div>
+                    <ul>
+                        
+                        <li>Languages: JavaScript, Python, Java, Golang, & C#</li>
+                        
+                        <li>Database: MySQL, MS SQL, & MongoDb</li>
+                        
+                        <li>Frameworks/Tools/Design Patterns: React JS, Redux, Angular 2+, Pact for contract testing, Servicenow, CSS in JS , Backend for the frontend, DDD, Open AI, LLM ,Gen AI</li>
+                        
+                        <li>Cloud/Devops: AWS, Azure, SNS, SQS, Rabbit MQ, Docker, CI/CD pipelines & Jenkins</li>
+                        
+                        <li>Practices: TDD, Pair programming, XP, TBD, OOPs, Clean code strategies, & cross-functional teams.</li>
+                        
+                        <li>Data Structures, Algorithms, Distributed systems, Micro services , REST API, Design System & libraries, System Designing & Architecture Designing</li>
+                        
+                    </ul>
+                </div>
+
+                <div class="section" style="background-color: #d4edda;">
+                    <div class="section-heading">Awards and Recognitions</div>
+                    
+                    <div class="sub-section">
+                        <p><strong>Bronze Badge (HackeRank) & Qualified GCM</strong></p>
+                        <p>2015</p>
+                        <p>Won Bronze badge in algorithms domain at HackerRank. <br/> Qualified Google Code Jam (GCM) round one</p>
+                    </div>
+                    
+                    <div class="sub-section">
+                        <p><strong>Insta Award Infosys</strong></p>
+                        <p>2016</p>
+                        <p>Excellent work done in automation in client project.</p>
+                    </div>
+                    
+                    <div class="sub-section">
+                        <p><strong>MVP in 3 sprints, Tieto</strong></p>
+                        <p>2017</p>
+                        <p>Awarded by team for contribution & guidance in dev</p>
+                    </div>
+                    
+                    <div class="sub-section">
+                        <p><strong>Floe Ninja ThoughtWorks</strong></p>
+                        <p>2019</p>
+                        <p>Developing client inventory dashboard in hackathon.</p>
+                    </div>
+                    
+                    <div class="sub-section">
+                        <p><strong>Kudos from Atlassian</strong></p>
+                        <p>2020</p>
+                        <p>For contribution in their performance improvement initiative.</p>
+                    </div>
+                    
+                    <div class="sub-section">
+                        <p><strong>Advent of Code (AOC) with all 50 stars</strong></p>
+                        <p>2020</p>
+                        <p>Completed AOC with all 50 stars and ranked 2 on office leaderboard</p>
+                    </div>
+                    
+                    <div class="sub-section">
+                        <p><strong>Servicenow Lama Award</strong></p>
+                        <p>2022</p>
+                        <p>For designing, architect & leading UI development of most critical project of Q3</p>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-    </aside>
+    </div>
 </body>
 
 </html>

@@ -4,6 +4,8 @@
     "linkedin": "",
     "phone": "+91-9591850974",
     "image_url": "https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI",
+    "role" : "Senior software developer",
+    "bio": "Senior full-stack developer with an 8+ years of experience in software development and a history and love of solving complex CS problems.",
     "work_experience": [
         {
             "title": "Sr. Software Engineer",
