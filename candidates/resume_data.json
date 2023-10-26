@@ -1,7 +1,9 @@
 {
     "name": "Akshay Khanna",
     "email": "akshay9911102163@gmail.com",
-    "linkedin": "",
+    "linkedInUrl": "https://www.linkedin.com/in/akshay-khanna93",
+    "leetCodeUrl": "https://leetcode.com/akshaykhanna",
+    "githubURL": "https://github.com/akshaykhanna",
     "phone": "+91-9591850974",
     "image_url": "https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI",
     "role" : "Senior software developer",
@@ -50,9 +52,9 @@
     ],
     "awards": [
         {
-            "title": "Bronze Badge (HackeRank) & Qualified GCM",
+            "title": "Badge@HackerRank & Qualified GCM",
             "year": "2015",
-            "description": "Won Bronze badge in algorithms domain at HackerRank. <br/> Qualified Google Code Jam (GCM) round one"
+            "description": "Won Bronze badge in algorithms domain at HackerRank & Qualified Google Code Jam (GCM) round one"
         },
         {
             "title": "Insta Award Infosys",
@@ -81,18 +83,28 @@
         },
         {
             "title": "Servicenow Lama Award",
-            "year": "2022",
+            "year": "2022 & 2023",
             "description": "For designing, architect & leading UI development of most critical project of Q3"
         }
     ],
     "education": [
         {
-            "degree": "BTech ECE",
-            "place": "JIIT",
-            "location": "Noida",
-            "startYear": "2011",
-            "endYear": "2015",
-            "description": "Completed B.Tech in Electronics & Communication Engineering with 7.9 CGPA"
+            "degree": "B Tech",
+            "place": "JIIT Noida",
+            "year": "2011-15",
+            "description": "CGPA 7.9"
+        },
+        {
+            "degree": "ISC 12th",
+            "place": "CMS Lucknow",
+            "year": "2011",
+            "description": "90%"
+        },
+        {
+            "degree": "ICSE 10th",
+            "place": "CMS Lucknow",
+            "year": "2009",
+            "description": "91%"
         }
     ]
 }

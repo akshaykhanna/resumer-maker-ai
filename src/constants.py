@@ -27,4 +27,5 @@ PDF_OPTIONS = {
     "encoding": "UTF-8",
     "custom-header": [("Accept-Encoding", "gzip")],
     "no-outline": None,
+    "orientation" : "Portrait"
 }

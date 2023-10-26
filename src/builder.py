@@ -56,7 +56,7 @@ class ResumeBuilder:
             self.resume_data = get_resume_data(self.resume_data_file)
 
         self._create_resume_html_file_with_data()
-        self._generate_pdf_from_html()
+        # self._generate_pdf_from_html()
 
 
 if __name__ == "__main__":

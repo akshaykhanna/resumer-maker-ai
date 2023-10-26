@@ -4,20 +4,21 @@
 <head>
     <title>Resume</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
-            padding: 1.25rem;
+            padding: 1rem 0;
         }
 
         .header {
             text-align: center;
-            padding: 1.25rem;
-            background-color: #007bff;
-            color: #fff;
+            padding: 0 1.25rem;
             display: flex;
             justify-content: space-between;
+            border-bottom: 2px solid #000;
 
             .heading-info {
                 font-weight: 600;
@@ -34,16 +35,21 @@
                 /* This ensures that the width is determined solely by the 'flex' property. */
 
             }
+
+            .flex-item:nth-child(2) {
+                flex: 0 0 20%;
+                /* The middle item is given a fixed width of 30% */
+            }
         }
 
         .image {
-            width: 7.5rem;
-            height: 7.5rem;
-            border: .125rem solid white;
+            width: 9.375rem;
+            height: 9.375rem;
+            border: .125rem solid black;
         }
 
         h1 {
-            font-size: 28px;
+            /* font-size: 46px; */
             margin: 0;
         }
 
@@ -59,35 +65,66 @@
         .contact-info {
             margin-top: .3125rem;
             display: inline-block;
+            text-align: right;
         }
 
         .main {
             display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            /* gap: .3125rem; */
+            width: 100%;
+
             .left {
                 flex: 6;
-                padding: 20px;
+                -webkit-box-flex: 6;
+                /* wkhtmltopdf uses this one */
+                -webkit-flex: 6;
+                /* wkhtmltopdf uses this one */
+                /* padding: 20px; */
             }
+
             .right {
                 flex: 4;
-                padding: 20px;
+                -webkit-box-flex: 4;
+                /* wkhtmltopdf uses this one */
+                -webkit-flex: 4;
+                /* wkhtmltopdf uses this one */
+                /* padding: 20px; */
             }
         }
 
         .section {
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.25rem;
             background-color: #fff;
             padding: .9375rem;
             border-radius: .3125rem;
             box-shadow: 0rem .125rem .3125rem rgba(0, 0, 0, 0.1);
         }
 
+        .left .section {
+            margin-bottom: 1rem;
+        }
+
+
         .section-heading {
             font-size: 1.25rem;
             font-weight: bold;
+            /* uppercase text */
+            text-transform: uppercase;
         }
 
         .sub-section {
-            margin-left: 1.25rem;
+            margin-left: 0.25rem;
+        }
+
+        .left .sub-section {
+            margin-left: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .awards .description {
+            font-size: 14px;
         }
     </style>
 </head>
@@ -108,14 +145,23 @@
             </div>
             <!--2nd part: image -->
             <div class="candidate-img-container flex-item">
-                <img style="border-radius: 50%; border: .125rem solid white" src="{{ image_url }}" alt="Profile Image"
-                    class="image">
+                <img style="border-radius: 50%;" src="{{ image_url }}" alt="Profile Image" class="image">
             </div>
             <!--3rd part: contact-->
-            <div class="contact-info flex-item">
-                <p><i class="fa fa-envelope"></i>{{ email }}</p>
-                <p><i class="fa fa-phone"></i>{{ phone }}</p>
-            </div>
+            <ul class="contact-info flex-item" style="list-style-type: none; line-height: 2">
+                <li><i class="fas fa-envelope"></i>&nbsp {{ email }}</li>
+                <li><i class="fas fa-phone"></i>&nbsp {{ phone }}</li>
+                {% if leetCodeUrl %}
+                <li><i class="fas fa-code"></i>&nbsp {{ leetCodeUrl }}</li>
+                {% endif %}
+                {% if linkedInUrl %}
+                <li><i class="fas fa-user"></i>&nbsp {{ linkedInUrl }}</li>
+                {% endif %}
+                {% if githubURL %}
+                <li><i class="fas fa-globe"></i>&nbsp {{ githubURL }}</li>
+                {% endif %}
+
+            </ul>
 
         </div>
         <div class="main">
@@ -123,9 +169,9 @@
                 <div class="section-heading">Work Experience</div>
                 {% for experience in work_experience %}
                 <div class="sub-section">
-                    <p><strong>{{ experience.title }} - {{ experience.company }}</strong></p>
-                    <p>{{ experience.duration }}</p>
-                    <p>{{ experience.description }}</p>
+                    <div><strong>{{ experience.title }} - {{ experience.company }}</strong></div>
+                    <div><i>{{ experience.duration }}</i></div>
+                    <div>{{ experience.description }}</div>
                 </div>
                 {% endfor %}
             </div>
@@ -140,15 +186,30 @@
                     </ul>
                 </div>
 
-                <div class="section" style="background-color: #d4edda;">
+                <div class="section awards">
                     <div class="section-heading">Awards and Recognitions</div>
                     {% for award in awards %}
                     <div class="sub-section">
-                        <p><strong>{{ award.title }}</strong></p>
-                        <p>{{ award.year }}</p>
-                        <p>{{ award.description }}</p>
+                        <div>
+                            <strong>{{ award.title }}</strong>&nbsp;
+                            <i>({{ award.year }})</i>
+                        </div>
+                        <div class="description">{{ award.description }}</div>
                     </div>
                     {% endfor %}
+                </div>
+                <div class="section education">
+                    <div class="section-heading">Education</div>
+                    <ul>
+                        {% for item in education %}
+                        <li>
+                            <strong>{{ item.place }}</strong>
+                            ({{ item.year }}) :
+                            {{ item.degree }},
+                            <i>{{ item.description }}</i>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>

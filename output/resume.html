@@ -4,20 +4,21 @@
 <head>
     <title>Resume</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
-            padding: 1.25rem;
+            padding: 1rem 0;
         }
 
         .header {
             text-align: center;
-            padding: 1.25rem;
-            background-color: #007bff;
-            color: #fff;
+            padding: 0 1.25rem;
             display: flex;
             justify-content: space-between;
+            border-bottom: 2px solid #000;
 
             .heading-info {
                 font-weight: 600;
@@ -34,16 +35,21 @@
                 /* This ensures that the width is determined solely by the 'flex' property. */
 
             }
+
+            .flex-item:nth-child(2) {
+                flex: 0 0 20%;
+                /* The middle item is given a fixed width of 30% */
+            }
         }
 
         .image {
-            width: 7.5rem;
-            height: 7.5rem;
-            border: .125rem solid white;
+            width: 9.375rem;
+            height: 9.375rem;
+            border: .125rem solid black;
         }
 
         h1 {
-            font-size: 28px;
+            /* font-size: 46px; */
             margin: 0;
         }
 
@@ -59,35 +65,66 @@
         .contact-info {
             margin-top: .3125rem;
             display: inline-block;
+            text-align: right;
         }
 
         .main {
             display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            /* gap: .3125rem; */
+            width: 100%;
+
             .left {
                 flex: 6;
-                padding: 20px;
+                -webkit-box-flex: 6;
+                /* wkhtmltopdf uses this one */
+                -webkit-flex: 6;
+                /* wkhtmltopdf uses this one */
+                /* padding: 20px; */
             }
+
             .right {
                 flex: 4;
-                padding: 20px;
+                -webkit-box-flex: 4;
+                /* wkhtmltopdf uses this one */
+                -webkit-flex: 4;
+                /* wkhtmltopdf uses this one */
+                /* padding: 20px; */
             }
         }
 
         .section {
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.25rem;
             background-color: #fff;
             padding: .9375rem;
             border-radius: .3125rem;
             box-shadow: 0rem .125rem .3125rem rgba(0, 0, 0, 0.1);
         }
 
+        .left .section {
+            margin-bottom: 1rem;
+        }
+
+
         .section-heading {
             font-size: 1.25rem;
             font-weight: bold;
+            /* uppercase text */
+            text-transform: uppercase;
         }
 
         .sub-section {
-            margin-left: 1.25rem;
+            margin-left: 0.25rem;
+        }
+
+        .left .sub-section {
+            margin-left: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .awards .description {
+            font-size: 14px;
         }
     </style>
 </head>
@@ -108,14 +145,23 @@
             </div>
             <!--2nd part: image -->
             <div class="candidate-img-container flex-item">
-                <img style="border-radius: 50%; border: .125rem solid white" src="https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI" alt="Profile Image"
-                    class="image">
+                <img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/C4E03AQHigoYexTZvfA/profile-displayphoto-shrink_400_400/0/1517618689559?e=1703116800&v=beta&t=G4pj-5-2OhcMFUSqNCkPXOvmZ3H5PE8Lkj0KTZPXuUI" alt="Profile Image" class="image">
             </div>
             <!--3rd part: contact-->
-            <div class="contact-info flex-item">
-                <p><i class="fa fa-envelope"></i>akshay9911102163@gmail.com</p>
-                <p><i class="fa fa-phone"></i>+91-9591850974</p>
-            </div>
+            <ul class="contact-info flex-item" style="list-style-type: none; line-height: 2">
+                <li><i class="fas fa-envelope"></i>&nbsp akshay9911102163@gmail.com</li>
+                <li><i class="fas fa-phone"></i>&nbsp +91-9591850974</li>
+                
+                <li><i class="fas fa-code"></i>&nbsp https://leetcode.com/akshaykhanna</li>
+                
+                
+                <li><i class="fas fa-user"></i>&nbsp https://www.linkedin.com/in/akshay-khanna93</li>
+                
+                
+                <li><i class="fas fa-globe"></i>&nbsp https://github.com/akshaykhanna</li>
+                
+
+            </ul>
 
         </div>
         <div class="main">
@@ -123,27 +169,27 @@
                 <div class="section-heading">Work Experience</div>
                 
                 <div class="sub-section">
-                    <p><strong>Sr. Software Engineer - Servicenow</strong></p>
-                    <p>September 2021 - Present</p>
-                    <p>* Developing and architect multiple product apps, microservices, REST API & UI components as part of the WSD (workplace management suite) product team using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI. <br/> * Designed the architecture & led the complete UI heavy development of a complex Scenario Planning (Office space planning & visualization) app, & for that, also built a complex data visualization and planning UI component called Stack Plan from scratch and recursive hierarchical tree visualization.</p>
+                    <div><strong>Sr. Software Engineer - Servicenow</strong></div>
+                    <div><i>September 2021 - Present</i></div>
+                    <div>* Developing and architect multiple product apps, microservices, REST API & UI components as part of the WSD (workplace management suite) product team using Seismic (React JS), JS, Java & ServiceNow, SQL (Glide) DB & GenAI. <br/> * Designed the architecture & led the complete UI heavy development of a complex Scenario Planning (Office space planning & visualization) app, & for that, also built a complex data visualization and planning UI component called Stack Plan from scratch and recursive hierarchical tree visualization.</div>
                 </div>
                 
                 <div class="sub-section">
-                    <p><strong>Senior Consultant - Thoughtworks</strong></p>
-                    <p>September 2018 - September 2021</p>
-                    <p>* Worked on the development & performance improvement of Atlassian's core UI design components in coordination with their Design System Team. Refactor & add features, contribute to there open source libraries, & wrote code mods (AST JSCodeShift) for easy shipping of these components. <br/> * Build a complex distributed system for UK's leading Outdoor advertisement company. Have built multiple microservices & REST API using Golang, Java, Python & MongoDB & followed DDD to build them. Written multiple CRON jobs, handled concurrency (via routines) & managed the event-driven architecture using SNS & SQS. Built UI using React Redux and used linear programming (GLPK) to solve their inventory optimization problem. Written unit, integration & contract test for each microservice and followed TDD & pair programming.</p>
+                    <div><strong>Senior Consultant - Thoughtworks</strong></div>
+                    <div><i>September 2018 - September 2021</i></div>
+                    <div>* Worked on the development & performance improvement of Atlassian's core UI design components in coordination with their Design System Team. Refactor & add features, contribute to there open source libraries, & wrote code mods (AST JSCodeShift) for easy shipping of these components. <br/> * Build a complex distributed system for UK's leading Outdoor advertisement company. Have built multiple microservices & REST API using Golang, Java, Python & MongoDB & followed DDD to build them. Written multiple CRON jobs, handled concurrency (via routines) & managed the event-driven architecture using SNS & SQS. Built UI using React Redux and used linear programming (GLPK) to solve their inventory optimization problem. Written unit, integration & contract test for each microservice and followed TDD & pair programming.</div>
                 </div>
                 
                 <div class="sub-section">
-                    <p><strong>Product Developer - Tieto</strong></p>
-                    <p>September 2017 - September 2018</p>
-                    <p>* Part of Tieto's (NORDICS company) Healthcare Product development teams, built 2 apps one was patient list & task management app from scratch for it. <br/> * Worked as full stack developer in these teams using Angular 5+ in front-end and Java MVC (+ SQL) REST microservices on the back- end. Have to develop user stories, write a unit test (jasmine + karma + jUnit), find bugs, purpose & implement suggestion & enhancements to the product, give demo after sprint’s and attend/conduct grooming, swarming, and retrospective meetings with product OPO’s</p>
+                    <div><strong>Product Developer - Tieto</strong></div>
+                    <div><i>September 2017 - September 2018</i></div>
+                    <div>* Part of Tieto's (NORDICS company) Healthcare Product development teams, built 2 apps one was patient list & task management app from scratch for it. <br/> * Worked as full stack developer in these teams using Angular 5+ in front-end and Java MVC (+ SQL) REST microservices on the back- end. Have to develop user stories, write a unit test (jasmine + karma + jUnit), find bugs, purpose & implement suggestion & enhancements to the product, give demo after sprint’s and attend/conduct grooming, swarming, and retrospective meetings with product OPO’s</div>
                 </div>
                 
                 <div class="sub-section">
-                    <p><strong>Software Engineer - Infosys</strong></p>
-                    <p>September 2015 - September 2017</p>
-                    <p>* Develop user stories and change requests as part of an agile Java backend development team for a Telecom Client Product. <br/> * Wrote single-handed multiple utilities & automation scripts to automate the above project infra work & improve application stability. Some of them were Bot for Auto Incident Resolver on BMC IATM ( Java & Sikuli lib), Bot for clearing stalls (stuck processes) using C#, WPF & Selenium, Auto Start/Stop Production Jobs & Server (C#, Background Worker) and Server Log Management utility (C#, Ionic Zip lib).</p>
+                    <div><strong>Software Engineer - Infosys</strong></div>
+                    <div><i>September 2015 - September 2017</i></div>
+                    <div>* Develop user stories and change requests as part of an agile Java backend development team for a Telecom Client Product. <br/> * Wrote single-handed multiple utilities & automation scripts to automate the above project infra work & improve application stability. Some of them were Bot for Auto Incident Resolver on BMC IATM ( Java & Sikuli lib), Bot for clearing stalls (stuck processes) using C#, WPF & Selenium, Auto Start/Stop Production Jobs & Server (C#, Background Worker) and Server Log Management utility (C#, Ionic Zip lib).</div>
                 </div>
                 
             </div>
@@ -168,51 +214,92 @@
                     </ul>
                 </div>
 
-                <div class="section" style="background-color: #d4edda;">
+                <div class="section awards">
                     <div class="section-heading">Awards and Recognitions</div>
                     
                     <div class="sub-section">
-                        <p><strong>Bronze Badge (HackeRank) & Qualified GCM</strong></p>
-                        <p>2015</p>
-                        <p>Won Bronze badge in algorithms domain at HackerRank. <br/> Qualified Google Code Jam (GCM) round one</p>
+                        <div>
+                            <strong>Badge@HackerRank & Qualified GCM</strong>&nbsp;
+                            <i>(2015)</i>
+                        </div>
+                        <div class="description">Won Bronze badge in algorithms domain at HackerRank & Qualified Google Code Jam (GCM) round one</div>
                     </div>
                     
                     <div class="sub-section">
-                        <p><strong>Insta Award Infosys</strong></p>
-                        <p>2016</p>
-                        <p>Excellent work done in automation in client project.</p>
+                        <div>
+                            <strong>Insta Award Infosys</strong>&nbsp;
+                            <i>(2016)</i>
+                        </div>
+                        <div class="description">Excellent work done in automation in client project.</div>
                     </div>
                     
                     <div class="sub-section">
-                        <p><strong>MVP in 3 sprints, Tieto</strong></p>
-                        <p>2017</p>
-                        <p>Awarded by team for contribution & guidance in dev</p>
+                        <div>
+                            <strong>MVP in 3 sprints, Tieto</strong>&nbsp;
+                            <i>(2017)</i>
+                        </div>
+                        <div class="description">Awarded by team for contribution & guidance in dev</div>
                     </div>
                     
                     <div class="sub-section">
-                        <p><strong>Floe Ninja ThoughtWorks</strong></p>
-                        <p>2019</p>
-                        <p>Developing client inventory dashboard in hackathon.</p>
+                        <div>
+                            <strong>Floe Ninja ThoughtWorks</strong>&nbsp;
+                            <i>(2019)</i>
+                        </div>
+                        <div class="description">Developing client inventory dashboard in hackathon.</div>
                     </div>
                     
                     <div class="sub-section">
-                        <p><strong>Kudos from Atlassian</strong></p>
-                        <p>2020</p>
-                        <p>For contribution in their performance improvement initiative.</p>
+                        <div>
+                            <strong>Kudos from Atlassian</strong>&nbsp;
+                            <i>(2020)</i>
+                        </div>
+                        <div class="description">For contribution in their performance improvement initiative.</div>
                     </div>
                     
                     <div class="sub-section">
-                        <p><strong>Advent of Code (AOC) with all 50 stars</strong></p>
-                        <p>2020</p>
-                        <p>Completed AOC with all 50 stars and ranked 2 on office leaderboard</p>
+                        <div>
+                            <strong>Advent of Code (AOC) with all 50 stars</strong>&nbsp;
+                            <i>(2020)</i>
+                        </div>
+                        <div class="description">Completed AOC with all 50 stars and ranked 2 on office leaderboard</div>
                     </div>
                     
                     <div class="sub-section">
-                        <p><strong>Servicenow Lama Award</strong></p>
-                        <p>2022</p>
-                        <p>For designing, architect & leading UI development of most critical project of Q3</p>
+                        <div>
+                            <strong>Servicenow Lama Award</strong>&nbsp;
+                            <i>(2022 & 2023)</i>
+                        </div>
+                        <div class="description">For designing, architect & leading UI development of most critical project of Q3</div>
                     </div>
                     
+                </div>
+                <div class="section education">
+                    <div class="section-heading">Education</div>
+                    <ul>
+                        
+                        <li>
+                            <strong>JIIT Noida</strong>
+                            (2011-15) :
+                            B Tech,
+                            <i>CGPA 7.9</i>
+                        </li>
+                        
+                        <li>
+                            <strong>CMS Lucknow</strong>
+                            (2011) :
+                            ISC 12th,
+                            <i>90%</i>
+                        </li>
+                        
+                        <li>
+                            <strong>CMS Lucknow</strong>
+                            (2009) :
+                            ICSE 10th,
+                            <i>91%</i>
+                        </li>
+                        
+                    </ul>
                 </div>
             </div>
         </div>
