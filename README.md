@@ -2,12 +2,13 @@
 Add your experience and skills once and then it will automatically create your customized resume for inputed job description.
 
 ## Init
-### Source resumed data:
+### Source resume data:
 > candidates/resume_data.json
 ### Resume template
 > input/resume_template.html
-### Output Resume
-> output/resume.html
+### Output resume
+ - output/resume.html
+ - output/resume.pdf
 
 ## Run 
 > `python src/main.py `
